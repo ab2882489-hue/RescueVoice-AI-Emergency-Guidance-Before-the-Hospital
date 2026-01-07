@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency AI Guidance - Nearby Help</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#c62828">
+</head>
+<body>
+    <div class="app-container">
+        <!-- App Header -->
+        <header class="app-header">
+            <div class="logo">
+                <div class="logo-icon"><i class="fas fa-cross"></i></div>
+                <div class="logo-text">Emergency AI Guidance</div>
+            </div>
+            <select class="language-selector" id="languageSelector">
+                <option value="en">English</option>
+                <option value="ur">Urdu</option>
+                <option value="ur-roman">Roman Urdu</option>
+            </select>
+        </header>
+        
+        <!-- Voice Indicator -->
+        <div class="voice-indicator hidden" id="voiceIndicator">
+            <div class="voice-icon"><i class="fas fa-volume-up"></i></div>
+            <div class="voice-text" id="voiceText">System is speaking: Showing nearby emergency services</div>
+            <div class="voice-animation">
+                <div class="voice-bar"></div>
+                <div class="voice-bar"></div>
+                <div class="voice-bar"></div>
+                <div class="voice-bar"></div>
+            </div>
+        </div>
+        
+        <!-- Nearby Help Page Content -->
+        <section class="page active">
+            <div class="page-container">
+                <div class="help-container">
+                    <h1 class="input-title">Nearby Emergency Help</h1>
+                    <p class="input-subtitle">Based on your location, here are the nearest emergency services.</p>
+                    
+                    <div class="location-container">
+                        <div class="location-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <div>Your Location: <strong id="userLocation">Detecting...</strong></div>
+                            <div style="font-size: 0.9rem;">Location is only used to find nearby help</div>
+                        </div>
+                    </div>
+                    
+                    <div class="help-list" id="helpList">
+                        <!-- Help items will be dynamically inserted here -->
+                    </div>
+                </div>
+                
+                <div class="page-navigation">
+                    <a href="guidance.html" class="nav-btn">
+                        <i class="fas fa-arrow-left"></i> Back to Guidance
+                    </a>
+                    <button class="nav-btn primary" id="refreshBtn">
+                        <i class="fas fa-sync-alt"></i> Refresh Locations
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- App Footer -->
+        <footer class="app-footer">
+            <div>Emergency AI Guidance System v1.0</div>
+            <div>For emergency use only. Not a medical device.</div>
+            <div class="footer-links">
+                <a href="about.html" class="footer-link">Safety & Disclaimer</a>
+                <a href="learn.html" class="footer-link">Learn First Aid</a>
+                <a href="#" class="footer-link" id="emergencyNumbersBtn">Emergency Numbers</a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/utils.js"></script>
+    <script src="js/nearby.js"></script>
+    <script>
+        // Initialize nearby help page
+        document.addEventListener('DOMContentLoaded', function() {
+            initNearbyPage();
+            
+            // Load user location
+            getUserLocation();
+            
+            // Load nearby help
+            loadNearbyHelp();
+            
+            // Speak guidance
+            setTimeout(() => {
+                speakMessage("Showing nearby emergency services based on your location. You can tap the call button to contact any facility directly.");
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
