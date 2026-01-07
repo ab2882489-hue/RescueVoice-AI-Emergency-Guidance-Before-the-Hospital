@@ -1,0 +1,132 @@
+/* style.css - Main Stylesheet for Emergency AI Guidance System */
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-red: #c62828;
+    --dark-red: #8e0000;
+    --light-red: #ff5f52;
+    --calm-blue: #1565c0;
+    --light-blue: #5e92f3;
+    --white: #ffffff;
+    --light-gray: #f5f5f5;
+    --medium-gray: #757575;
+    --dark-gray: #212121;
+    --success-green: #2e7d32;
+    --warning-orange: #f57c00;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+    line-height: 1.6;
+    max-width: 100vw;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+.app-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--white);
+    min-height: 100vh;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Utility Classes */
+.hidden {
+    display: none !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+
+/* Animation Keyframes */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes voicePulse {
+    0%, 100% { height: 10px; }
+    50% { height: 20px; }
+}
+
+@keyframes recording {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(198, 40, 40, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(198, 40, 40, 0); }
+}
+
+@keyframes shake {
+    from { transform: translateX(-5px); }
+    to { transform: translateX(5px); }
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .app-header {
+        padding: 1rem;
+    }
+    
+    .logo-text {
+        font-size: 1.2rem;
+    }
+    
+    .home-title {
+        font-size: 1.8rem;
+    }
+    
+    .input-title, .severe-title {
+        font-size: 1.6rem;
+    }
+    
+    .home-features {
+        gap: 1rem;
+    }
+    
+    .feature {
+        width: 140px;
+        padding: 1rem;
+    }
+    
+    .step-actions, .severe-actions {
+        flex-direction: column;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion) {
+    .emergency-icon, .severe-icon, .mic-button.active {
+        animation: none;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    :root {
+        --primary-red: #b00000;
+        --calm-blue: #003c8f;
+        --dark-gray: #000000;
+    }
+    
+    .app-container {
+        border: 2px solid #000;
+    }
+}
