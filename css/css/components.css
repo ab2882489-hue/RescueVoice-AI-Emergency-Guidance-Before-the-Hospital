@@ -1,0 +1,763 @@
+/* components.css - Component Styles for Emergency AI Guidance System */
+
+/* Header Styles */
+.app-header {
+    background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+    color: var(--white);
+    padding: 1.2rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    font-size: 1.8rem;
+}
+
+.logo-text {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.language-selector {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: var(--white);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* Page Container */
+.page-container {
+    padding: 1.5rem;
+    min-height: calc(100vh - 120px);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Page Navigation */
+.page-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+}
+
+.nav-btn {
+    background-color: var(--calm-blue);
+    color: var(--white);
+    border: none;
+    padding: 0.9rem 1.5rem;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+}
+
+.nav-btn:hover {
+    background-color: var(--light-blue);
+    transform: translateY(-2px);
+}
+
+.nav-btn.primary {
+    background-color: var(--primary-red);
+}
+
+.nav-btn.primary:hover {
+    background-color: var(--light-red);
+}
+
+/* Voice Indicator */
+.voice-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: rgba(21, 101, 192, 0.1);
+    padding: 0.8rem;
+    border-radius: var(--border-radius);
+    margin: 0 1.5rem;
+    border-left: 4px solid var(--calm-blue);
+}
+
+.voice-icon {
+    color: var(--calm-blue);
+    font-size: 1.3rem;
+}
+
+.voice-text {
+    font-weight: 500;
+    color: var(--dark-gray);
+    flex: 1;
+}
+
+/* Voice Animation */
+.voice-animation {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.voice-bar {
+    width: 4px;
+    height: 20px;
+    background-color: var(--calm-blue);
+    border-radius: 2px;
+    animation: voicePulse 1.2s infinite ease-in-out;
+}
+
+.voice-bar:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.voice-bar:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.voice-bar:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+/* Home Page */
+.home-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 1.5rem;
+}
+
+.emergency-icon {
+    font-size: 5rem;
+    color: var(--primary-red);
+    margin-bottom: 1.5rem;
+    animation: pulse 2s infinite;
+}
+
+.home-title {
+    font-size: 2.2rem;
+    color: var(--dark-red);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.home-subtitle {
+    font-size: 1.1rem;
+    color: var(--medium-gray);
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+}
+
+.start-button {
+    background-color: var(--primary-red);
+    color: var(--white);
+    border: none;
+    padding: 1.2rem 3rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 6px 20px rgba(198, 40, 40, 0.3);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    width: fit-content;
+}
+
+.start-button:hover {
+    background-color: var(--dark-red);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(198, 40, 40, 0.4);
+}
+
+.home-features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.feature {
+    background-color: var(--light-gray);
+    padding: 1.2rem;
+    border-radius: var(--border-radius);
+    width: 160px;
+    text-align: center;
+}
+
+.feature-icon {
+    font-size: 1.8rem;
+    color: var(--calm-blue);
+    margin-bottom: 0.5rem;
+}
+
+.feature-text {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Emergency Input Page */
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.input-title {
+    font-size: 1.8rem;
+    color: var(--dark-red);
+    margin-bottom: 0.5rem;
+}
+
+.input-subtitle {
+    color: var(--medium-gray);
+    margin-bottom: 1.5rem;
+}
+
+.input-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.input-card {
+    background-color: var(--light-gray);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    border-left: 6px solid var(--calm-blue);
+}
+
+.input-card.voice {
+    border-left-color: var(--primary-red);
+}
+
+.input-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1rem;
+}
+
+.input-icon {
+    font-size: 1.8rem;
+    color: var(--calm-blue);
+}
+
+.input-card.voice .input-icon {
+    color: var(--primary-red);
+}
+
+.input-card-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.mic-button {
+    background-color: var(--primary-red);
+    color: var(--white);
+    border: none;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5rem auto;
+    box-shadow: 0 6px 15px rgba(198, 40, 40, 0.3);
+    transition: all 0.3s ease;
+}
+
+.mic-button.active {
+    background-color: var(--dark-red);
+    animation: recording 1.5s infinite;
+}
+
+.text-input {
+    width: 100%;
+    height: 150px;
+    padding: 1.2rem;
+    border: 2px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    font-family: 'Poppins', sans-serif;
+    resize: none;
+}
+
+.text-input:focus {
+    outline: none;
+    border-color: var(--calm-blue);
+}
+
+.transcript-container {
+    background-color: rgba(21, 101, 192, 0.05);
+    border-radius: var(--border-radius);
+    padding: 1.2rem;
+    margin-top: 1rem;
+    border: 1px dashed var(--calm-blue);
+}
+
+.transcript-title {
+    font-weight: 600;
+    color: var(--calm-blue);
+    margin-bottom: 0.5rem;
+}
+
+.transcript-text {
+    color: var(--dark-gray);
+    font-style: italic;
+}
+
+/* AI Guidance Page */
+.guidance-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.guidance-header {
+    background: linear-gradient(135deg, var(--calm-blue), var(--light-blue));
+    color: var(--white);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+}
+
+.condition-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.severity-badge {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.severity-mild {
+    background-color: #e8f5e9;
+    color: var(--success-green);
+}
+
+.severity-moderate {
+    background-color: #fff3e0;
+    color: var(--warning-orange);
+}
+
+.severity-severe {
+    background-color: #ffebee;
+    color: var(--primary-red);
+}
+
+.progress-container {
+    margin: 1.5rem 0;
+}
+
+.progress-text {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.progress-bar {
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: var(--calm-blue);
+    width: 17%;
+    transition: width 0.5s ease;
+}
+
+.step-container {
+    background-color: var(--light-gray);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.step-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1rem;
+}
+
+.step-number {
+    background-color: var(--calm-blue);
+    color: var(--white);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.step-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.step-content {
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.step-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.step-btn {
+    flex: 1;
+    padding: 0.8rem;
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.repeat-btn {
+    background-color: #e0e0e0;
+    color: var(--dark-gray);
+}
+
+.next-btn {
+    background-color: var(--calm-blue);
+    color: var(--white);
+}
+
+/* Severe Emergency Page */
+.severe-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1.5rem;
+}
+
+.severe-icon {
+    font-size: 4rem;
+    color: var(--primary-red);
+    margin-bottom: 1.5rem;
+    animation: shake 0.5s infinite alternate;
+}
+
+.severe-title {
+    font-size: 2.2rem;
+    color: var(--primary-red);
+    margin-bottom: 1rem;
+}
+
+.severe-warning {
+    font-size: 1.2rem;
+    color: var(--dark-gray);
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+.countdown-container {
+    background-color: rgba(198, 40, 40, 0.1);
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0;
+    border: 8px solid var(--primary-red);
+}
+
+.countdown-number {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--primary-red);
+}
+
+.severe-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 2rem;
+}
+
+.severe-btn {
+    padding: 1.2rem;
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+}
+
+.cancel-btn {
+    background-color: #e0e0e0;
+    color: var(--dark-gray);
+}
+
+.call-btn {
+    background-color: var(--primary-red);
+    color: var(--white);
+}
+
+.message-btn {
+    background-color: var(--success-green);
+    color: var(--white);
+}
+
+/* Nearby Help Page */
+.help-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.location-container {
+    background-color: rgba(21, 101, 192, 0.1);
+    padding: 1.2rem;
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1rem;
+}
+
+.location-icon {
+    color: var(--calm-blue);
+    font-size: 1.5rem;
+}
+
+.help-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.help-item {
+    background-color: var(--light-gray);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    border-left: 6px solid var(--calm-blue);
+}
+
+.help-icon {
+    font-size: 2rem;
+    color: var(--calm-blue);
+}
+
+.help-info {
+    flex: 1;
+}
+
+.help-name {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+
+.help-type {
+    color: var(--medium-gray);
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+}
+
+.help-distance {
+    color: var(--medium-gray);
+    font-size: 0.9rem;
+}
+
+.call-button {
+    background-color: var(--success-green);
+    color: var(--white);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Learn First Aid Page */
+.education-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.education-card {
+    background-color: var(--light-gray);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.education-image {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 3rem;
+}
+
+.education-content {
+    padding: 1.5rem;
+}
+
+.education-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+}
+
+.learn-more-btn {
+    background-color: var(--calm-blue);
+    color: var(--white);
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.learn-more-btn:hover {
+    background-color: var(--light-blue);
+}
+
+/* About & Disclaimer Page */
+.about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.disclaimer-card {
+    background-color: rgba(245, 124, 0, 0.1);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    border-left: 6px solid var(--warning-orange);
+}
+
+.disclaimer-title {
+    font-size: 1.4rem;
+    color: var(--warning-orange);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section {
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--calm-blue);
+}
+
+.emergency-numbers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.emergency-number-item {
+    background-color: var(--light-gray);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    border-left: 4px solid var(--primary-red);
+}
+
+.country-name {
+    font-weight: 700;
+    color: var(--primary-red);
+    margin-bottom: 0.3rem;
+}
+
+.emergency-number {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--dark-gray);
+}
+
+/* Footer */
+.app-footer {
+    background-color: var(--dark-gray);
+    color: var(--white);
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.footer-link {
+    color: var(--light-blue);
+    text-decoration: none;
+    cursor: pointer;
+}
