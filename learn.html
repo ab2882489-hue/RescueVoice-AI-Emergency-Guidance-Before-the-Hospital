@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency AI Guidance - Learn First Aid</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#1565c0">
+</head>
+<body>
+    <div class="app-container">
+        <!-- App Header -->
+        <header class="app-header">
+            <div class="logo">
+                <div class="logo-icon"><i class="fas fa-cross"></i></div>
+                <div class="logo-text">Emergency AI Guidance</div>
+            </div>
+            <select class="language-selector" id="languageSelector">
+                <option value="en">English</option>
+                <option value="ur">Urdu</option>
+                <option value="ur-roman">Roman Urdu</option>
+            </select>
+        </header>
+        
+        <!-- Voice Indicator -->
+        <div class="voice-indicator hidden" id="voiceIndicator">
+            <div class="voice-icon"><i class="fas fa-volume-up"></i></div>
+            <div class="voice-text" id="voiceText">System is speaking: First aid education mode</div>
+            <div class="voice-animation">
+                <div class="voice-bar"></div>
+                <div class="voice-bar"></div>
+                <div class="voice-bar"></div>
+                <div class="voice-bar"></div>
+            </div>
+        </div>
+        
+        <!-- Learn First Aid Page Content -->
+        <section class="page active">
+            <div class="page-container">
+                <div class="education-container">
+                    <h1 class="input-title">Learn First Aid & Emergency Response</h1>
+                    <p class="input-subtitle">Educational content for non-emergency situations. Practice these skills to be prepared.</p>
+                    
+                    <div class="education-card">
+                        <div class="education-image" style="background-color: #1565c0;">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <div class="education-content">
+                            <h2 class="education-title">CPR (Cardiopulmonary Resuscitation)</h2>
+                            <p>Learn the basic steps of CPR for adults, children, and infants. Timing and proper technique are critical for survival in cardiac arrest situations.</p>
+                            <button class="learn-more-btn" data-topic="cpr">Learn More</button>
+                        </div>
+                    </div>
+                    
+                    <div class="education-card">
+                        <div class="education-image" style="background-color: #2e7d32;">
+                            <i class="fas fa-band-aid"></i>
+                        </div>
+                        <div class="education-content">
+                            <h2 class="education-title">Bleeding Control</h2>
+                            <p>How to apply direct pressure, use tourniquets, and manage severe bleeding until professional help arrives.</p>
+                            <button class="learn-more-btn" data-topic="bleeding">Learn More</button>
+                        </div>
+                    </div>
+                    
+                    <div class="education-card">
+                        <div class="education-image" style="background-color: #f57c00;">
+                            <i class="fas fa-head-side-virus"></i>
+                        </div>
+                        <div class="education-content">
+                            <h2 class="education-title">Stroke Recognition</h2>
+                            <p>Remember FAST: Face drooping, Arm weakness, Speech difficulty, Time to call emergency. Early recognition saves brain function.</p>
+                            <button class="learn-more-btn" data-topic="stroke">Learn More</button>
+                        </div>
+                    </div>
+                    
+                    <div class="education-card">
+                        <div class="education-image" style="background-color: #6a1b9a;">
+                            <i class="fas fa-allergies"></i>
+                        </div>
+                        <div class="education-content">
+                            <h2 class="education-title">Allergic Reactions</h2>
+                            <p>Recognizing anaphylaxis and using epinephrine auto-injectors. When to seek immediate medical help.</p>
+                            <button class="learn-more-btn" data-topic="allergy">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="page-navigation">
+                    <a href="index.html" class="nav-btn">
+                        <i class="fas fa-arrow-left"></i> Back to Home
+                    </a>
+                    <a href="about.html" class="nav-btn primary">
+                        <i class="fas fa-shield-alt"></i> Safety Guidelines
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- App Footer -->
+        <footer class="app-footer">
+            <div>Emergency AI Guidance System v1.0</div>
+            <div>For emergency use only. Not a medical device.</div>
+            <div class="footer-links">
+                <a href="about.html" class="footer-link">Safety & Disclaimer</a>
+                <a href="index.html" class="footer-link">Emergency Home</a>
+                <a href="#" class="footer-link" id="emergencyNumbersBtn">Emergency Numbers</a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/utils.js"></script>
+    <script src="js/learn.js"></script>
+    <script>
+        // Initialize learn page
+        document.addEventListener('DOMContentLoaded', function() {
+            initLearnPage();
+            
+            // Calm voice guidance for educational mode
+            setTimeout(() => {
+                speakMessage("Welcome to First Aid Education mode. Here you can learn life-saving skills for emergency situations.");
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
