@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency AI Guidance - Describe Emergency</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#c62828">
+</head>
+<body>
+    <div class="app-container">
+        <!-- App Header -->
+        <header class="app-header">
+            <div class="logo">
+                <div class="logo-icon"><i class="fas fa-cross"></i></div>
+                <div class="logo-text">Emergency AI Guidance</div>
+            </div>
+            <select class="language-selector" id="languageSelector">
+                <option value="en">English</option>
+                <option value="ur">Urdu</option>
+                <option value="ur-roman">Roman Urdu</option>
+            </select>
+        </header>
+        
+        <!-- Voice Indicator -->
+        <div class="voice-indicator hidden" id="voiceIndicator">
+            <div class="voice-icon"><i class="fas fa-volume-up"></i></div>
+            <div class="voice-text" id="voiceText">System is speaking: Please describe your emergency</div>
+            <div class="voice-animation">
+                <div class="voice-bar"></div>
+                <div class="voice-bar"></div>
+                <div class="voice-bar"></div>
+                <div class="voice-bar"></div>
+            </div>
+        </div>
+        
+        <!-- Emergency Input Page Content -->
+        <section class="page active">
+            <div class="page-container">
+                <div class="input-container">
+                    <h1 class="input-title">Describe Your Emergency</h1>
+                    <p class="input-subtitle">Speak clearly or type what happened. Our AI will analyze and provide step-by-step guidance.</p>
+                    
+                    <div class="input-options">
+                        <!-- Voice Input Card -->
+                        <div class="input-card voice">
+                            <div class="input-header">
+                                <div class="input-icon"><i class="fas fa-microphone"></i></div>
+                                <div class="input-card-title">Voice Input (Recommended)</div>
+                            </div>
+                            <p>Click the microphone and describe what happened in your own language.</p>
+                            
+                            <button class="mic-button" id="micButton">
+                                <i class="fas fa-microphone"></i>
+                            </button>
+                            
+                            <div class="transcript-container hidden" id="transcriptContainer">
+                                <div class="transcript-title">You said:</div>
+                                <div class="transcript-text" id="transcriptText"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Text Input Card -->
+                        <div class="input-card">
+                            <div class="input-header">
+                                <div class="input-icon"><i class="fas fa-keyboard"></i></div>
+                                <div class="input-card-title">Type Your Emergency</div>
+                            </div>
+                            <p>If you cannot speak, type your emergency situation here.</p>
+                            
+                            <textarea class="text-input" id="textInput" placeholder="Example: My father is having chest pain and difficulty breathing..."></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="page-navigation">
+                    <a href="index.html" class="nav-btn">
+                        <i class="fas fa-arrow-left"></i> Back to Home
+                    </a>
+                    <button class="nav-btn primary" id="analyzeBtn">
+                        Analyze Situation <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- App Footer -->
+        <footer class="app-footer">
+            <div>Emergency AI Guidance System v1.0</div>
+            <div>For emergency use only. Not a medical device.</div>
+            <div class="footer-links">
+                <a href="about.html" class="footer-link">Safety & Disclaimer</a>
+                <a href="learn.html" class="footer-link">Learn First Aid</a>
+                <a href="#" class="footer-link" id="emergencyNumbersBtn">Emergency Numbers</a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/utils.js"></script>
+    <script src="js/emergency.js"></script>
+    <script>
+        // Initialize emergency page
+        document.addEventListener('DOMContentLoaded', function() {
+            initEmergencyPage();
+            
+            // Auto-start voice guidance after a delay
+            setTimeout(() => {
+                const message = "Please describe your emergency by speaking or typing. I'm listening for your voice input.";
+                speakMessage(message);
+            }, 800);
+        });
+    </script>
+</body>
+</html>
