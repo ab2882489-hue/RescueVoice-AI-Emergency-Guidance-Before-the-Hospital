@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency AI Guidance System - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#c62828">
+</head>
+<body>
+    <div class="app-container">
+        <!-- App Header -->
+        <header class="app-header">
+            <div class="logo">
+                <div class="logo-icon"><i class="fas fa-cross"></i></div>
+                <div class="logo-text">Emergency AI Guidance</div>
+            </div>
+            <select class="language-selector" id="languageSelector">
+                <option value="en">English</option>
+                <option value="ur">Urdu</option>
+                <option value="ur-roman">Roman Urdu</option>
+            </select>
+        </header>
+        
+        <!-- Voice Indicator -->
+        <div class="voice-indicator hidden" id="voiceIndicator">
+            <div class="voice-icon"><i class="fas fa-volume-up"></i></div>
+            <div class="voice-text" id="voiceText">System is speaking: Welcome to Emergency Guidance System</div>
+            <div class="voice-animation">
+                <div class="voice-bar"></div>
+                <div class="voice-bar"></div>
+                <div class="voice-bar"></div>
+                <div class="voice-bar"></div>
+            </div>
+        </div>
+        
+        <!-- Home Page Content -->
+        <section class="page active">
+            <div class="home-page">
+                <div class="emergency-icon">
+                    <i class="fas fa-first-aid"></i>
+                </div>
+                <h1 class="home-title">Emergency AI Guidance System</h1>
+                <p class="home-subtitle">Life-saving guidance before reaching the hospital. Speak or type your emergency situation for immediate step-by-step instructions.</p>
+                
+                <a href="emergency.html" class="start-button" id="startButton">
+                    <i class="fas fa-play-circle"></i>
+                    START EMERGENCY HELP
+                </a>
+                
+                <div class="home-features">
+                    <div class="feature">
+                        <div class="feature-icon"><i class="fas fa-microphone"></i></div>
+                        <div class="feature-text">Voice & Text Input</div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon"><i class="fas fa-language"></i></div>
+                        <div class="feature-text">Multi-Language</div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon"><i class="fas fa-hands-free"></i></div>
+                        <div class="feature-text">Hands-Free Mode</div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon"><i class="fas fa-ambulance"></i></div>
+                        <div class="feature-text">Auto Emergency Call</div>
+                    </div>
+                </div>
+                
+                <div class="page-navigation">
+                    <a href="learn.html" class="nav-btn">
+                        <i class="fas fa-graduation-cap"></i> Learn First Aid
+                    </a>
+                    <a href="about.html" class="nav-btn">
+                        <i class="fas fa-info-circle"></i> About & Safety
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- App Footer -->
+        <footer class="app-footer">
+            <div>Emergency AI Guidance System v1.0</div>
+            <div>For emergency use only. Not a medical device.</div>
+            <div class="footer-links">
+                <a href="about.html" class="footer-link">Safety & Disclaimer</a>
+                <a href="learn.html" class="footer-link">Learn First Aid</a>
+                <a href="#" class="footer-link" id="emergencyNumbersBtn">Emergency Numbers</a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/utils.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        // Initialize home page
+        document.addEventListener('DOMContentLoaded', function() {
+            initHomePage();
+            
+            // Auto-start voice greeting
+            setTimeout(() => {
+                const greeting = getGreetingMessage();
+                speakMessage(greeting);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
