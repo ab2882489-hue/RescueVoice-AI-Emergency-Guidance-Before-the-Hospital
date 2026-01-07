@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency AI Guidance - About & Safety</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#1565c0">
+</head>
+<body>
+    <div class="app-container">
+        <!-- App Header -->
+        <header class="app-header">
+            <div class="logo">
+                <div class="logo-icon"><i class="fas fa-cross"></i></div>
+                <div class="logo-text">Emergency AI Guidance</div>
+            </div>
+            <select class="language-selector" id="languageSelector">
+                <option value="en">English</option>
+                <option value="ur">Urdu</option>
+                <option value="ur-roman">Roman Urdu</option>
+            </select>
+        </header>
+        
+        <!-- Voice Indicator -->
+        <div class="voice-indicator hidden" id="voiceIndicator">
+            <div class="voice-icon"><i class="fas fa-volume-up"></i></div>
+            <div class="voice-text" id="voiceText">System is speaking: Important safety information</div>
+            <div class="voice-animation">
+                <div class="voice-bar"></div>
+                <div class="voice-bar"></div>
+                <div class="voice-bar"></div>
+                <div class="voice-bar"></div>
+            </div>
+        </div>
+        
+        <!-- About & Disclaimer Page Content -->
+        <section class="page active">
+            <div class="page-container">
+                <div class="about-container">
+                    <div class="disclaimer-card">
+                        <h2 class="disclaimer-title">
+                            <i class="fas fa-exclamation-circle"></i> IMPORTANT MEDICAL DISCLAIMER
+                        </h2>
+                        <p>This system provides <strong>first-aid guidance only</strong> and is NOT a substitute for professional medical care. Always seek immediate medical attention for emergencies.</p>
+                        <p>The AI does NOT diagnose conditions. It provides guidance based on symptoms described. If in doubt, call emergency services immediately.</p>
+                    </div>
+                    
+                    <div class="section">
+                        <h3 class="section-title">How This System Works</h3>
+                        <p>1. <strong>Voice-First Design:</strong> The system speaks automatically to guide you through emergencies, especially when you cannot look at the screen.</p>
+                        <p>2. <strong>AI Severity Assessment:</strong> Our engine classifies emergencies as Mild, Moderate, or Severe based on described symptoms.</p>
+                        <p>3. <strong>Auto Emergency Call:</strong> For severe emergencies, the system automatically calls local emergency services after a 5-second countdown.</p>
+                        <p>4. <strong>Multi-Language Support:</strong> Works in English, Urdu, and Roman Urdu with auto-detection of language.</p>
+                    </div>
+                    
+                    <div class="section">
+                        <h3 class="section-title">Privacy & Data Safety</h3>
+                        <p>• We do NOT store your voice recordings or personal information.</p>
+                        <p>• Location data is used only to find nearby help and is not stored.</p>
+                        <p>• Emergency messages only include essential information: situation, location, and time.</p>
+                        <p>• All processing happens locally in your browser when possible.</p>
+                    </div>
+                    
+                    <div class="section">
+                        <h3 class="section-title">Permissions Explained</h3>
+                        <p>• <strong>Microphone:</strong> For voice input when you describe the emergency.</p>
+                        <p>• <strong>Location:</strong> To find nearby hospitals and send your location to emergency services.</p>
+                        <p>• <strong>Phone/SMS:</strong> To automatically call and message emergency contacts (with your confirmation).</p>
+                    </div>
+                    
+                    <div class="section">
+                        <h3 class="section-title">Emergency Numbers by Country</h3>
+                        <div class="emergency-numbers-grid" id="emergencyNumbersGrid">
+                            <!-- Emergency numbers will be dynamically inserted here -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="page-navigation">
+                    <a href="index.html" class="nav-btn">
+                        <i class="fas fa-arrow-left"></i> Back to Home
+                    </a>
+                    <a href="learn.html" class="nav-btn primary">
+                        <i class="fas fa-graduation-cap"></i> Learn First Aid
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- App Footer -->
+        <footer class="app-footer">
+            <div>Emergency AI Guidance System v1.0</div>
+            <div>For emergency use only. Not a medical device.</div>
+            <div class="footer-links">
+                <a href="#" class="footer-link" onclick="window.print()">Print Safety Info</a>
+                <a href="index.html" class="footer-link">Emergency Home</a>
+                <a href="#" class="footer-link" id="emergencyNumbersBtn">Emergency Numbers</a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/utils.js"></script>
+    <script src="js/about.js"></script>
+    <script>
+        // Initialize about page
+        document.addEventListener('DOMContentLoaded', function() {
+            initAboutPage();
+            
+            // Load emergency numbers
+            loadEmergencyNumbers();
+            
+            // Speak important disclaimer
+            setTimeout(() => {
+                speakMessage("Important safety information. This system provides first-aid guidance only and is not a substitute for professional medical care.");
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
