@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency AI Guidance - Severe Emergency Detected</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#c62828">
+</head>
+<body>
+    <div class="app-container">
+        <!-- App Header -->
+        <header class="app-header">
+            <div class="logo">
+                <div class="logo-icon"><i class="fas fa-cross"></i></div>
+                <div class="logo-text">Emergency AI Guidance</div>
+            </div>
+            <select class="language-selector" id="languageSelector">
+                <option value="en">English</option>
+                <option value="ur">Urdu</option>
+                <option value="ur-roman">Roman Urdu</option>
+            </select>
+        </header>
+        
+        <!-- Voice Indicator -->
+        <div class="voice-indicator" id="voiceIndicator">
+            <div class="voice-icon"><i class="fas fa-volume-up"></i></div>
+            <div class="voice-text" id="voiceText">Severe emergency detected. Calling emergency services in 5 seconds.</div>
+            <div class="voice-animation">
+                <div class="voice-bar"></div>
+                <div class="voice-bar"></div>
+                <div class="voice-bar"></div>
+                <div class="voice-bar"></div>
+            </div>
+        </div>
+        
+        <!-- Severe Emergency Page Content -->
+        <section class="page active">
+            <div class="severe-container">
+                <div class="severe-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <h1 class="severe-title">SEVERE EMERGENCY DETECTED</h1>
+                <p class="severe-warning">Our AI has detected a life-threatening condition. The system will automatically call emergency services in:</p>
+                
+                <div class="countdown-container">
+                    <div class="countdown-number" id="countdownNumber">5</div>
+                </div>
+                
+                <p class="severe-warning">If you can cancel, please say "CANCEL" or press the cancel button below.</p>
+                
+                <div class="severe-actions">
+                    <button class="severe-btn cancel-btn" id="cancelBtn">
+                        <i class="fas fa-ban"></i> CANCEL EMERGENCY CALL
+                    </button>
+                    <button class="severe-btn call-btn" id="callNowBtn">
+                        <i class="fas fa-phone-alt"></i> CALL EMERGENCY NOW
+                    </button>
+                    <button class="severe-btn message-btn" id="messageBtn">
+                        <i class="fas fa-sms"></i> SEND EMERGENCY MESSAGE
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- App Footer -->
+        <footer class="app-footer">
+            <div>Emergency AI Guidance System v1.0</div>
+            <div>For emergency use only. Not a medical device.</div>
+            <div class="footer-links">
+                <a href="about.html" class="footer-link">Safety & Disclaimer</a>
+                <a href="learn.html" class="footer-link">Learn First Aid</a>
+                <a href="#" class="footer-link" id="emergencyNumbersBtn">Emergency Numbers</a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/utils.js"></script>
+    <script src="js/severe.js"></script>
+    <script>
+        // Initialize severe emergency page
+        document.addEventListener('DOMContentLoaded', function() {
+            initSeverePage();
+            
+            // Start countdown immediately
+            startCountdown();
+        });
+    </script>
+</body>
+</html>
